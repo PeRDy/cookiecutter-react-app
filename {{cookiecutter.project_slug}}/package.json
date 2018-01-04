@@ -1,0 +1,17 @@
+{
+  "name": "{{ cookiecutter.project_slug }}",
+  "version": "{{ cookiecutter.version }}",
+  "private": true,
+  "dependencies": {
+    "eslint-config-airbnb": "^16.1.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.0.17"
+  },
+  "scripts": {
+    "development": "react-server start",
+    "start": "supervisord -c server/supervisor.cfg",
+    "build": "react-scripts build",
+    "eject": "react-scripts eject"
+  }
+}
