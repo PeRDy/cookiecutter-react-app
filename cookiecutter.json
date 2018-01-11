@@ -6,5 +6,6 @@
     "project_short_description": "A short description of the project",
     "release_date": "{% now 'local' %}",
     "version": "1.0.0",
+    "theme_color": "#000000",
     "_extensions": ["jinja2_time.TimeExtension"]
 }
