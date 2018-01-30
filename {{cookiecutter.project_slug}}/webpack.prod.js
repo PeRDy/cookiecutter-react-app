@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const webpack = require('webpack');
-const config = require('./webpack.base');
+const config = require('./webpack.config');
 
 module.exports = Object.assign({}, config, {
   devtool: 'cheap-module-source-map',

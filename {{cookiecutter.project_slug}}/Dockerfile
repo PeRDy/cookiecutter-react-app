@@ -21,12 +21,14 @@ RUN npm i -g yarn
 RUN mkdir -p $WORKDIR
 WORKDIR $WORKDIR
 
+# Install server requirements
 RUN python3 -m pip install uwsgi Flask
 
 # Install requirements
 COPY package.json yarn.lock $WORKDIR/
-RUN yarn install
+RUN yarn install && yarn cache clean
 
+# Add application
 COPY . $WORKDIR/
 
 # Set up nginx config
@@ -35,6 +37,6 @@ COPY server/nginx.conf /etc/nginx/conf.d/default.conf
 # Bundle app
 RUN yarn run build
 
-EXPOSE 3000
+EXPOSE 8000
 ENTRYPOINT ["yarn", "run"]
 CMD ["start"]

@@ -5,14 +5,15 @@ const htmlWebpackTemplate = require('html-webpack-template');
 
 module.exports = {
   devtool: 'debug',
-  entry: './src/index.js',
+  entry: './src/index.jsx',
   output: {
     filename: 'static/js/main.js',
     path: path.resolve(__dirname, 'build'),
   },
   devServer: {
     contentBase: './build',
-    port: 3000,
+    host: '0.0.0.0',
+    port: 8000,
   },
   stats: {
     colors: true,
